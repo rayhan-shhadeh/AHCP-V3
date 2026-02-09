@@ -1,10 +1,10 @@
-import Hero from '@/components/Hero';
-import ActivityCard from '@/components/ActivityCard';
-import NewsCard from '@/components/NewsCard';
-import Link from 'next/link';
-import { getTranslations } from '@/lib/i18n';
-import { getActivities, getNews } from '@/lib/notion';
-import type { Locale } from '@/types/content';
+import Hero from "@/components/Hero";
+import ActivityCard from "@/components/ActivityCard";
+import NewsCard from "@/components/NewsCard";
+import Link from "next/link";
+import { getTranslations } from "@/lib/i18n";
+import { getActivities, getNews } from "@/lib/notion";
+import type { Locale } from "@/types/content";
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -15,7 +15,7 @@ export default async function HomePage({
 }) {
   const locale = params.locale as Locale;
   const t = await getTranslations(locale);
-  
+
   // Fetch content with safe fallbacks
   const activities = await getActivities(locale);
   const news = await getNews(locale);
@@ -47,10 +47,10 @@ export default async function HomePage({
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { value: '500', label: t.home.impact.stats.children },
-              { value: '15', label: t.home.impact.stats.programs },
-              { value: '50', label: t.home.impact.stats.volunteers },
-              { value: '10', label: t.home.impact.stats.years },
+              { value: "500", label: t.home.impact.stats.children },
+              { value: "60", label: t.home.impact.stats.programs },
+              { value: "50", label: t.home.impact.stats.volunteers },
+              { value: "14", label: t.home.impact.stats.years },
             ].map((stat, index) => (
               <div
                 key={index}
@@ -78,16 +78,30 @@ export default async function HomePage({
               className="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-2"
             >
               {t.common.viewAll}
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={locale === 'ar' ? 'M15 19l-7-7 7-7' : 'M9 5l7 7-7 7'} />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d={locale === "ar" ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"}
+                />
               </svg>
             </Link>
           </div>
-          
+
           {activities.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {activities.slice(0, 3).map((activity) => (
-                <ActivityCard key={activity.id} activity={activity} locale={locale} />
+                <ActivityCard
+                  key={activity.id}
+                  activity={activity}
+                  locale={locale}
+                />
               ))}
             </div>
           ) : (
@@ -110,12 +124,22 @@ export default async function HomePage({
               className="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-2"
             >
               {t.common.viewAll}
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={locale === 'ar' ? 'M15 19l-7-7 7-7' : 'M9 5l7 7-7 7'} />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d={locale === "ar" ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"}
+                />
               </svg>
             </Link>
           </div>
-          
+
           {news.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {news.slice(0, 3).map((item) => (
@@ -134,12 +158,12 @@ export default async function HomePage({
       <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-700 text-white">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            {locale === 'ar' ? 'كن جزءاً من التغيير' : 'Be Part of the Change'}
+            {locale === "ar" ? "كن جزءاً من التغيير" : "Be Part of the Change"}
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            {locale === 'ar' 
-              ? 'ساهم في تحسين حياة الأطفال الأيتام وساعدنا في بناء مستقبل أفضل لهم'
-              : 'Help improve the lives of orphan children and build a better future for them'}
+            {locale === "ar"
+              ? "ساهم في تحسين حياة الأطفال الأيتام وساعدنا في بناء مستقبل أفضل لهم"
+              : "Help improve the lives of orphan children and build a better future for them"}
           </p>
           <Link
             href={`/${locale}/donate`}

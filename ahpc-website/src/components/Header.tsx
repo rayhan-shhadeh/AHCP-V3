@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import type { Locale } from '@/types/content';
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import type { Locale } from "@/types/content";
 
 interface HeaderProps {
   locale: Locale;
@@ -11,7 +12,7 @@ interface HeaderProps {
 
 export default function Header({ locale, t }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const otherLocale: Locale = locale === 'ar' ? 'en' : 'ar';
+  const otherLocale: Locale = locale === "ar" ? "en" : "ar";
 
   const navigation = [
     { name: t.common.home, href: `/${locale}` },
@@ -27,15 +28,25 @@ export default function Header({ locale, t }: HeaderProps) {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center gap-3 group">
-            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-              <span className="text-white font-bold text-xl">AHPC</span>
+            <div className="w-14 h-14 flex items-center justify-center">
+              <Image
+                src="/logo.png"
+                alt={locale === "ar" ? "جمعية إسعاد الطفل الفلسطيني" : "AHPC"}
+                width={56}
+                height={56}
+                priority
+                className="object-contain"
+              />
             </div>
+
             <div className="hidden md:block">
-              <div className={`font-bold text-gray-900 ${locale === 'ar' ? 'text-right' : 'text-left'}`}>
-                {locale === 'ar' ? 'جمعية إسعاد الطفل الفلسطيني' : 'AHPC'}
+              <div
+                className={`font-bold text-gray-900 ${locale === "ar" ? "text-right" : "text-left"}`}
+              >
+                {locale === "ar" ? "جمعية إسعاد الطفل الفلسطيني" : "AHPC"}
               </div>
               <div className="text-sm text-gray-600">
-                {locale === 'ar' ? 'نابلس - فلسطين' : 'Nablus - Palestine'}
+                {locale === "ar" ? "نابلس - فلسطين" : "Nablus - Palestine"}
               </div>
             </div>
           </Link>
