@@ -1,0 +1,81 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About Us",
+    "activities": "Activities",
+    "news": "News",
+    "contact": "Contact",
+    "donate": "Donate Now",
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "viewAll": "View All"
+  },
+  "home": {
+    "hero": {
+      "title": "Together for the Happiness of Palestinian Children",
+      "subtitle": "Association for Happiness of the Palestinian Child - Nablus",
+      "cta": "Join Us"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "We provide care and support for orphan children in Palestine, striving to build a better future through education, healthcare, and psychological and social support."
+    },
+    "impact": {
+      "title": "Our Impact",
+      "stats": {
+        "children": "+ Children Served",
+        "programs": "+ Active Programs",
+        "volunteers": "+ Volunteers",
+        "years": "+ Years of Service"
+      }
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "mission": "Our Mission",
+    "vision": "Our Vision",
+    "values": "Our Values"
+  },
+  "activities": {
+    "title": "Our Activities",
+    "description": "Discover our latest programs and activities supporting children",
+    "noActivities": "No activities available at this time",
+    "backToActivities": "Back to Activities",
+    "gallery": "Photo Gallery"
+  },
+  "news": {
+    "title": "Latest News",
+    "description": "Follow our latest news and events",
+    "noNews": "No news available at this time",
+    "backToNews": "Back to News",
+    "gallery": "Photo Gallery"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "website": "Website",
+    "facebook": "Facebook",
+    "sendMessage": "Send Message"
+  },
+  "donate": {
+    "title": "Donate to Support Children",
+    "description": "Your contribution makes a difference in the lives of orphan children. Every donation helps provide education, healthcare, and psychological support.",
+    "bankDetails": {
+      "title": "Bank Details",
+      "accountName": "Account Name",
+      "accountNumber": "Account Number",
+      "bankName": "Bank Name",
+      "iban": "IBAN",
+      "swift": "SWIFT Code"
+    },
+    "directDonation": "For direct donations, please transfer to the following bank account:"
+  },
+  "footer": {
+    "description": "Association for Happiness of the Palestinian Child - Working for a better future for our children",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "rights": "© 2024 Association for Happiness of the Palestinian Child. All rights reserved."
+  }
+}
