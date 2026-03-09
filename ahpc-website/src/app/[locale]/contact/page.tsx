@@ -146,12 +146,12 @@ export default async function ContactPage({
                       {t.contact.website}
                     </h3>
                     <a
-                      href="https://www.isaadtefelfalastini.com"
+                      href="https://palestinianchild.org"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary-600 hover:text-primary-700"
                     >
-                      www.isaadtefelfalastini.com
+                      https://palestinianchild.org
                     </a>
                   </div>
                 </div>
