@@ -5,6 +5,7 @@ A production-grade, bilingual (Arabic/English) Next.js website built with **zero
 ## 🎯 Project Overview
 
 This website is built following a **zero-fail architecture** principle:
+
 - ✅ Zero build-time failures
 - ✅ Zero runtime server dependencies
 - ✅ Zero paid services required
@@ -122,6 +123,7 @@ yarn install
 Create three databases in Notion with the following schemas:
 
 **Pages Database**:
+
 - `slug` (Text)
 - `locale` (Select: ar / en)
 - `title` (Title)
@@ -129,6 +131,7 @@ Create three databases in Notion with the following schemas:
 - `published` (Checkbox)
 
 **Activities Database**:
+
 - `title` (Title)
 - `description` (Rich Text)
 - `date` (Date)
@@ -137,6 +140,7 @@ Create three databases in Notion with the following schemas:
 - `published` (Checkbox)
 
 **News Database**:
+
 - Same structure as Activities
 
 #### Create Notion Integration
@@ -160,7 +164,7 @@ NOTION_ACTIVITIES_DB_ID=your_activities_database_id
 NOTION_NEWS_DB_ID=your_news_database_id
 
 # Site Configuration
-NEXT_PUBLIC_SITE_URL=https://www.isaadtefelfalastini.com
+NEXT_PUBLIC_SITE_URL=https://palestinianchild.org
 ```
 
 **Note**: The website works without Notion configured. Pages will show empty states gracefully.
@@ -185,6 +189,7 @@ To add a hero video:
 ## 🌍 Internationalization
 
 The website supports two locales:
+
 - `ar` - Arabic (default, RTL)
 - `en` - English (LTR)
 
@@ -197,6 +202,7 @@ The website supports two locales:
 ### Adding Translations
 
 Edit the JSON files in `src/messages/`:
+
 - `ar.json` - Arabic translations
 - `en.json` - English translations
 
@@ -211,6 +217,7 @@ Edit the JSON files in `src/messages/`:
 ### Without Notion
 
 The website works without Notion integration:
+
 - Activities and News pages show empty states
 - All other pages display static content
 - No build errors occur
@@ -225,6 +232,7 @@ The website works without Notion integration:
 4. Deploy
 
 The website will:
+
 - Build successfully even if Notion is down
 - Use ISR for dynamic content
 - Revalidate content every hour
@@ -278,6 +286,7 @@ This project is proprietary software for the Association for Happiness of the Pa
 ## 🆘 Support
 
 For technical support or questions:
+
 1. Check the documentation in this README
 2. Review the code comments
 3. Contact the development team
@@ -290,15 +299,15 @@ For technical support or questions:
 // lib/notion.ts uses safe fetch wrapper
 async function safeFetch<T>(
   fetchFn: () => Promise<T[]>,
-  fallback: T[] = []
+  fallback: T[] = [],
 ): Promise<T[]> {
   if (!notion) return fallback;
-  
+
   try {
     const result = await fetchFn();
     return result;
   } catch (error) {
-    console.error('Notion fetch error:', error);
+    console.error("Notion fetch error:", error);
     return fallback; // Always returns fallback, never throws
   }
 }
@@ -315,8 +324,8 @@ export const revalidate = 3600; // Revalidate every hour
 
 ```typescript
 // Automatic direction based on locale
-export function getDirection(locale: Locale): 'rtl' | 'ltr' {
-  return locale === 'ar' ? 'rtl' : 'ltr';
+export function getDirection(locale: Locale): "rtl" | "ltr" {
+  return locale === "ar" ? "rtl" : "ltr";
 }
 ```
 

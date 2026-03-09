@@ -5,6 +5,7 @@ This guide provides step-by-step instructions for deploying the AHPC website to 
 ## 🎯 Deployment Strategy
 
 The website uses a **zero-fail deployment** strategy:
+
 - No build will ever fail due to content unavailability
 - ISR (Incremental Static Regeneration) for dynamic content
 - Static pages with no external dependencies
@@ -86,13 +87,13 @@ const nextConfig = {
     unoptimized: true, // No image optimization required
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'www.notion.so',
+        protocol: "https",
+        hostname: "www.notion.so",
       },
     ],
   },
-  output: 'standalone',
-}
+  output: "standalone",
+};
 ```
 
 ### Build Command
@@ -102,6 +103,7 @@ npm run build
 ```
 
 This will:
+
 - Build all static pages
 - Generate ISR pages with 1-hour revalidation
 - Create optimized production bundle
@@ -119,7 +121,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 ```env
 NOTION_TOKEN=your_production_token
-NEXT_PUBLIC_SITE_URL=https://www.isaadtefelfalastini.com
+NEXT_PUBLIC_SITE_URL=https://palestinianchild.org
 ```
 
 ## 📊 Monitoring Build Health
@@ -127,12 +129,14 @@ NEXT_PUBLIC_SITE_URL=https://www.isaadtefelfalastini.com
 ### Build Checks
 
 ✅ **Expected behavior**:
+
 - Build completes successfully
 - All routes are accessible
 - Empty states show when Notion is unavailable
 - No 500 errors
 
 ❌ **If build fails**:
+
 1. Check Vercel build logs
 2. Verify TypeScript compilation locally: `npm run build`
 3. Check for missing dependencies
@@ -235,6 +239,7 @@ npm run build
 ### Recommended Optimizations
 
 1. **Enable Image Optimization** (if using many images):
+
    ```javascript
    images: {
      unoptimized: false,
@@ -242,6 +247,7 @@ npm run build
    ```
 
 2. **Adjust Revalidation Period**:
+
    ```typescript
    export const revalidate = 7200; // 2 hours
    ```
@@ -297,7 +303,7 @@ openGraph: {
   type: 'website',
   locale: 'ar_PS',
   alternateLocale: 'en_US',
-  url: 'https://www.isaadtefelfalastini.com',
+  url: 'https://palestinianchild.org',
   siteName: 'AHPC',
 }
 ```
@@ -343,10 +349,12 @@ Before going live:
 ## 🎉 You're Live!
 
 Once deployed, your website will be available at:
+
 - Vercel URL: `https://ahpc-website.vercel.app`
-- Custom domain: `https://www.isaadtefelfalastini.com`
+- Custom domain: `https://palestinianchild.org`
 
 The website will automatically:
+
 - Update content from Notion every hour
 - Serve static pages instantly
 - Handle traffic spikes without issues
