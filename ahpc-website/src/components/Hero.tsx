@@ -53,17 +53,17 @@ export default function Hero({ locale, t }: HeroProps) {
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight -translate-y-60">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight  mt-10 pt-10">
             {t.home.hero.title}
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl mb-8 text-white/90 font-light -translate-y-60">
+          <p className="text-xl md:text-2xl mb-8 text-white/90 font-light  pt-10">
             {t.home.hero.subtitle}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center -translate-y-60">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center ">
             <Link
               href={`/${locale}/donate`}
               className="bg-white text-primary-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-primary-50 transition-all hover:shadow-2xl hover:scale-105 active:scale-95"
